@@ -97,10 +97,19 @@
         </section>
 
         <section id="game" class="game-container bg-white p-4 mb-12 max-w-5xl mx-auto">
-            <iframe src="https://cloud.onlinegames.io/games/2025/unity/unixhs/index-og.html" class="game-iframe" allowfullscreen allow="fullscreen"></iframe>
+            <div class="relative w-full" style="padding-top: 56.25%;">
+                <iframe src="https://cloud.onlinegames.io/games/2025/unity/unixhs/index-og.html" 
+                    class="game-iframe absolute top-0 left-0 w-full h-full" 
+                    allowfullscreen 
+                    allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                    loading="lazy">
+                </iframe>
+            </div>
             <div id="game-error" class="hidden p-4 text-center">
-                <p class="text-red-500 mb-2">游戏加载失败</p>
-                <p>请稍后再试或检查您的网络连接</p>
+                <p class="text-red-500 mb-2">Game loading failed</p>
+                <p>Please try again later or check your network connection</p>
+                <button id="retry-button" class="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Retry</button>
             </div>
         </section>
 
@@ -152,7 +161,7 @@
                 <div class="flex items-start">
                     <div class="flex-shrink-0 mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000-16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                         </svg>
                     </div>
                     <div class="ml-3">
@@ -213,37 +222,76 @@
     </footer>
 
     <script>
-        // Ensure iframe responsiveness
-        window.addEventListener('resize', function() {
+        // 游戏加载处理
+        document.addEventListener('DOMContentLoaded', function() {
             const gameIframe = document.querySelector('.game-iframe');
-            if (window.innerWidth <= 640) {
-                gameIframe.style.height = '300px';
-            } else if (window.innerWidth <= 768) {
-                gameIframe.style.height = '400px';
-            } else {
-                gameIframe.style.height = '600px';
+            const gameError = document.getElementById('game-error');
+            const retryButton = document.getElementById('retry-button');
+            
+            // 设置超时检测
+            let gameLoaded = false;
+            const timeoutDuration = 10000; // 10秒
+            
+            const loadTimeout = setTimeout(function() {
+                if (!gameLoaded) {
+                    showGameError();
+                }
+            }, timeoutDuration);
+            
+            // 处理iframe加载成功
+            gameIframe.addEventListener('load', function() {
+                gameLoaded = true;
+                clearTimeout(loadTimeout);
+                
+                try {
+                    // 尝试访问iframe内容，检查是否有效加载
+                    const frameWindow = gameIframe.contentWindow;
+                    const frameDocument = frameWindow.document;
+                    
+                    // 如果能访问内容但页面标题包含错误信息，则显示错误
+                    if (frameDocument.title.includes('Error') || frameDocument.title.includes('Access Denied')) {
+                        showGameError();
+                    }
+                } catch (e) {
+                    // 跨域错误，无法直接检查内容
+                    // 使用备用方法：检查iframe是否有可见内容
+                    setTimeout(function() {
+                        // 如果iframe高度很小，可能表示加载失败
+                        if (gameIframe.clientHeight < 50) {
+                            showGameError();
+                        }
+                    }, 1000);
+                }
+            });
+            
+            // 处理iframe加载错误
+            gameIframe.addEventListener('error', function() {
+                showGameError();
+            });
+            
+            // 重试按钮
+            retryButton.addEventListener('click', function() {
+                gameError.classList.add('hidden');
+                gameIframe.classList.remove('hidden');
+                gameIframe.src = gameIframe.src; // 重新加载iframe
+            });
+            
+            function showGameError() {
+                gameIframe.classList.add('hidden');
+                gameError.classList.remove('hidden');
             }
-        });
-
-        // 处理iframe加载错误
-        const gameIframe = document.querySelector('.game-iframe');
-        const gameError = document.getElementById('game-error');
-        
-        gameIframe.addEventListener('error', function() {
-            gameIframe.classList.add('hidden');
-            gameError.classList.remove('hidden');
-        });
-        
-        // 尝试使用备用游戏源
-        gameIframe.addEventListener('load', function() {
-            try {
-                // 检查iframe是否成功加载
-                const frameContent = gameIframe.contentDocument || gameIframe.contentWindow.document;
-                // 如果能访问内容，说明加载成功
-            } catch (e) {
-                // 如果出现跨域错误或其他错误，尝试使用备用链接
-                gameIframe.src = "https://unixhs.com/games/cell-battle/";
+            
+            // 响应式调整
+            function adjustIframeHeight() {
+                const container = document.querySelector('.game-container');
+                const containerWidth = container.clientWidth;
+                // 保持16:9的宽高比
+                const height = containerWidth * 0.5625;
+                container.querySelector('.relative').style.paddingTop = height + 'px';
             }
+            
+            window.addEventListener('resize', adjustIframeHeight);
+            adjustIframeHeight();
         });
 
         // Smooth scrolling for anchor links
