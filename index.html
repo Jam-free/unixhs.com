@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cell Devouring Battle - Exciting Online Multiplayer Game | UnixHS</title>
-    <meta name="description" content="Play Cell Devouring Battle online for free! Grow your cell by consuming smaller ones in this addictive multiplayer io game. No download required.">
+    <title>ABC Tiles - Fun Letter Matching Game | UnixHS</title>
+    <meta name="description" content="Play ABC Tiles online for free! Match letters and clear the board in this addictive puzzle game. No download required.">
     <link rel="canonical" href="https://unixhs.com/">
-    <meta name="keywords" content="cell devouring battle, online multiplayer game, io games, browser games, free online games">
+    <meta name="keywords" content="abc tiles, letter matching game, word puzzle, browser games, free online games">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <style>
         :root {
             --apple-blue: #007AFF;
-            --apple-gray: #8E8E93;
             --apple-light-gray: #F2F2F7;
             --apple-green: #34C759;
-            --apple-red: #FF3B30;
         }
         
         body {
@@ -34,22 +32,6 @@
             overflow: hidden;
         }
         
-        .game-iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-        }
-        
-        .feature-card {
-            border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
         .btn-play {
             background-color: var(--apple-green);
             transition: all 0.3s ease;
@@ -59,46 +41,33 @@
             background-color: #2DB84D;
             transform: scale(1.05);
         }
-        
-        @media (max-width: 768px) {
-            .game-iframe {
-                height: 400px;
-            }
-        }
-        
-        @media (max-width: 640px) {
-            .game-iframe {
-                height: 300px;
-            }
-        }
     </style>
 </head>
 <body>
-    <header class="header py-6 px-4 md:px-8">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div class="text-center md:text-left mb-4 md:mb-0">
+    <header class="header py-4 px-4 md:px-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
                 <a href="/" class="text-2xl font-bold">UnixHS.com</a>
             </div>
             <nav>
                 <ul class="flex space-x-6">
-                    <li><a href="#" class="hover:text-white/80">Home</a></li>
+                    <li><a href="#game" class="hover:text-white/80">Play Game</a></li>
                     <li><a href="#how-to-play" class="hover:text-white/80">How to Play</a></li>
-                    <li><a href="#about" class="hover:text-white/80">About</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8">
-        <section class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Cell Devouring Battle</h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Consume, grow, and dominate in this addictive multiplayer cell evolution game!</p>
-            <a href="#game" class="btn-play inline-block mt-6 px-8 py-3 text-white font-semibold rounded-full">Play Now!</a>
+    <main class="container mx-auto px-4 py-6">
+        <section class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold mb-3">ABC Tiles</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Match letters and clear the board in this fun puzzle game!</p>
+            <a href="#game" class="btn-play inline-block mt-4 px-8 py-3 text-white font-semibold rounded-full">Play Now!</a>
         </section>
 
-        <section id="game" class="game-container bg-white p-4 mb-12 max-w-5xl mx-auto">
-            <div class="relative w-full" style="padding-top: 56.25%;">
-                <iframe src="https://cloud.onlinegames.io/games/2025/unity/unixhs/index-og.html" 
+        <section id="game" class="game-container bg-white p-4 mb-8 max-w-4xl mx-auto">
+            <div class="relative w-full" style="padding-top: 75%;">
+                <iframe src="https://cdn.htmlgames.com/ABCTiles/index.html?npa=1" 
                     class="game-iframe absolute top-0 left-0 w-full h-full" 
                     allowfullscreen 
                     allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -113,124 +82,47 @@
             </div>
         </section>
 
-        <section class="mb-12">
-            <h2 id="about" class="text-3xl font-bold mb-6 text-center">About Cell Devouring Battle</h2>
-            <div class="max-w-4xl mx-auto">
-                <p class="mb-4">Cell Devouring Battle is an exciting multiplayer online game where you control a tiny cell with one simple goal: become the biggest! Navigate your cell around the arena, consuming smaller cells to grow while avoiding larger predators that can devour you.</p>
-                <p class="mb-4">This addictive io-style game combines simple controls with strategic gameplay. Will you play it safe and grow slowly, or take risks to climb the leaderboard faster? The choice is yours in this survival of the fittest!</p>
-                <p>Play directly in your browser with no downloads required. Challenge players from around the world and see if you can reach the top of the food chain!</p>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <h2 id="how-to-play" class="text-3xl font-bold mb-8 text-center">How to Play</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="feature-card bg-white p-6 text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Move & Navigate</h3>
-                    <p>Use your mouse or touch screen to control your cell's movement. Your cell will follow your cursor or finger across the game arena.</p>
-                </div>
-                <div class="feature-card bg-white p-6 text-center">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Grow & Evolve</h3>
-                    <p>Consume smaller cells and food particles to increase your size. The larger you become, the more points you earn and the higher you climb on the leaderboard.</p>
-                </div>
-                <div class="feature-card bg-white p-6 text-center">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Survive & Dominate</h3>
-                    <p>Avoid larger cells that can consume you. Use strategy and quick reflexes to outmaneuver opponents and become the dominant cell in the arena.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold mb-6 text-center">Game Features</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000-16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="ml-3">
-                        <h3 class="font-semibold">Multiplayer Experience</h3>
-                        <p class="text-gray-600">Compete against players from around the world in real-time battles.</p>
-                    </div>
-                </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="ml-3">
-                        <h3 class="font-semibold">No Download Required</h3>
-                        <p class="text-gray-600">Play instantly in your browser without installing any software.</p>
-                    </div>
-                </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="ml-3">
-                        <h3 class="font-semibold">Leaderboard System</h3>
-                        <p class="text-gray-600">Track your progress and compete for the top spot on the global rankings.</p>
-                    </div>
-                </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="ml-3">
-                        <h3 class="font-semibold">Simple Controls</h3>
-                        <p class="text-gray-600">Easy to learn but challenging to master gameplay mechanics.</p>
-                    </div>
-                </div>
+        <section id="how-to-play" class="mb-8 max-w-3xl mx-auto">
+            <h2 class="text-2xl font-bold mb-4 text-center">How to Play ABC Tiles</h2>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-blue-100 text-blue-800 rounded-full mr-3 flex-shrink-0 font-bold">1</span>
+                        <p>Find and match identical letters on the board to remove them.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-blue-100 text-blue-800 rounded-full mr-3 flex-shrink-0 font-bold">2</span>
+                        <p>Letters can only be matched if they can be connected by a line with no more than two turns.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-blue-100 text-blue-800 rounded-full mr-3 flex-shrink-0 font-bold">3</span>
+                        <p>Clear all letters from the board to complete each level.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="inline-flex items-center justify-center w-6 h-6 bg-blue-100 text-blue-800 rounded-full mr-3 flex-shrink-0 font-bold">4</span>
+                        <p>Work quickly! The timer is running and you'll score higher for faster matches.</p>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p>&copy; 2023 UnixHS.com. All rights reserved.</p>
-                </div>
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
-                    <a href="#" class="hover:text-gray-300">Terms of Service</a>
-                    <a href="#" class="hover:text-gray-300">Contact Us</a>
-                </div>
-            </div>
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>&copy; 2023 UnixHS.com. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // 游戏加载处理
+        // Game loading handler
         document.addEventListener('DOMContentLoaded', function() {
             const gameIframe = document.querySelector('.game-iframe');
             const gameError = document.getElementById('game-error');
             const retryButton = document.getElementById('retry-button');
             
-            // 设置超时检测
+            // Set timeout detection
             let gameLoaded = false;
-            const timeoutDuration = 10000; // 10秒
+            const timeoutDuration = 10000; // 10 seconds
             
             const loadTimeout = setTimeout(function() {
                 if (!gameLoaded) {
@@ -238,25 +130,22 @@
                 }
             }, timeoutDuration);
             
-            // 处理iframe加载成功
+            // Handle iframe load success
             gameIframe.addEventListener('load', function() {
                 gameLoaded = true;
                 clearTimeout(loadTimeout);
                 
                 try {
-                    // 尝试访问iframe内容，检查是否有效加载
+                    // Try to access iframe content to check if loaded properly
                     const frameWindow = gameIframe.contentWindow;
                     const frameDocument = frameWindow.document;
                     
-                    // 如果能访问内容但页面标题包含错误信息，则显示错误
                     if (frameDocument.title.includes('Error') || frameDocument.title.includes('Access Denied')) {
                         showGameError();
                     }
                 } catch (e) {
-                    // 跨域错误，无法直接检查内容
-                    // 使用备用方法：检查iframe是否有可见内容
+                    // Cross-domain error, can't check content directly
                     setTimeout(function() {
-                        // 如果iframe高度很小，可能表示加载失败
                         if (gameIframe.clientHeight < 50) {
                             showGameError();
                         }
@@ -264,34 +153,22 @@
                 }
             });
             
-            // 处理iframe加载错误
+            // Handle iframe load error
             gameIframe.addEventListener('error', function() {
                 showGameError();
             });
             
-            // 重试按钮
+            // Retry button
             retryButton.addEventListener('click', function() {
                 gameError.classList.add('hidden');
                 gameIframe.classList.remove('hidden');
-                gameIframe.src = gameIframe.src; // 重新加载iframe
+                gameIframe.src = gameIframe.src; // Reload iframe
             });
             
             function showGameError() {
                 gameIframe.classList.add('hidden');
                 gameError.classList.remove('hidden');
             }
-            
-            // 响应式调整
-            function adjustIframeHeight() {
-                const container = document.querySelector('.game-container');
-                const containerWidth = container.clientWidth;
-                // 保持16:9的宽高比
-                const height = containerWidth * 0.5625;
-                container.querySelector('.relative').style.paddingTop = height + 'px';
-            }
-            
-            window.addEventListener('resize', adjustIframeHeight);
-            adjustIframeHeight();
         });
 
         // Smooth scrolling for anchor links
@@ -303,7 +180,7 @@
                 
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 60,
                         behavior: 'smooth'
                     });
                 }
